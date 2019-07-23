@@ -8,6 +8,7 @@ var apiKey = process.env.REACT_APP_ASTRO_KEY;
 var getResponse = (resource, data, callback) => {
   var url = baseUrl + resource;
   var auth = "Basic " + new Buffer(userID + ":" + apiKey).toString("base64");
+  
   request(
     {
       url: url,
@@ -63,7 +64,7 @@ var packageNumeroData = (date, month, year, name) => {
 };
 
 var packageMatchMakingData = (maleBirthData, femaleBirthData) => {
-  mData = {
+  let mData = {
     m_day: maleBirthData["date"],
     m_month: maleBirthData["month"],
     m_year: maleBirthData["year"],
@@ -73,7 +74,7 @@ var packageMatchMakingData = (maleBirthData, femaleBirthData) => {
     m_lon: maleBirthData["longitude"],
     m_tzone: maleBirthData["timezone"]
   };
-  fData = {
+  let fData = {
     f_day: femaleBirthData["date"],
     f_month: femaleBirthData["month"],
     f_year: femaleBirthData["year"],
