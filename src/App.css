@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("./assets/art-ball-close-up-1935854.jpg");
+  background-size: cover;
 }
 
 .App-logo {
@@ -23,11 +28,29 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sign-icon-cont {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+}
+
+.main-page-bottom {
+  height: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.main-page-top {
+  padding: 10px;
+      height: 30%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+nav > ul {
+  display: flex;
 }

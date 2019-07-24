@@ -1,0 +1,32 @@
+.sign-img-container {
+  display: flex;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  justify-content: center;
+
+  align-items: center;
+  cursor: pointer;
+}
+
+.sign-img-container::before {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  justify-content: center;
+  background: black;
+}
+
+.sign-img-container > img {
+  height: 50%;
+  width: 50%;
+}
+
+.sign-icon {
+  margin: 0 10px;
+}
+
+.sign-name {
+  cursor: pointer;
+}
