@@ -11,11 +11,15 @@
 }
 
 .sign-img-container::before {
-  width: 200px;
-  height: 200px;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   justify-content: center;
-  background: black;
+  background-color: lightgray;
 }
 
 .sign-img-container > img {
