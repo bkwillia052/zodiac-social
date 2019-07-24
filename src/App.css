@@ -30,8 +30,11 @@
 
 .sign-icon-cont {
   display: flex;
-  width: 50%;
+  position: relative;
+  width: 640px;
   flex-wrap: wrap;
+
+  height: 475px;
 }
 
 .main-page-bottom {

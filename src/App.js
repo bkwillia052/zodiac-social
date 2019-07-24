@@ -36,6 +36,8 @@ let signs = [
   "aquarius",
   "pisces"
 ];
+
+
 class App extends Component {
   state = {
     reports: []
@@ -82,7 +84,7 @@ class App extends Component {
           <div>ZODIAC SOCIAL</div>
           <ul>
             <li>Sign Up</li>
-            <li>Sign In</li>
+            <li>Sign</li>
           </ul>
         </nav>
         </div>

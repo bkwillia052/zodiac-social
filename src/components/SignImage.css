@@ -59,7 +59,9 @@
 }
 
 .sign-icon {
-  margin: 0 10px;
+  position: absolute;
+}
+.sign-icon {
 }
 
 .sign-name {
@@ -81,4 +83,29 @@
   border: 3px solid;
   border-radius: 50%;
   z-index: 1;
+}
+
+.aries {
+}
+.taurus {
+}
+.gemini {
+}
+.cancer {
+}
+.leo {
+}
+.virgo {
+}
+.libra {
+}
+.scorpio {
+}
+.sagittarius {
+}
+.capricorn {
+}
+.aquarius {
+}
+.pisces {
 }
