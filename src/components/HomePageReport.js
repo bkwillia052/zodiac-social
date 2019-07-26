@@ -1,8 +1,10 @@
 import React from "react";
 import "./HomePageReport.css";
+import { useSpring, animated } from "react-spring";
 
 const HomePageReport = props => {
   const { selectedReport } = props;
+
   if (props.selectedReport) {
     var {
       personal_life,
@@ -23,9 +25,15 @@ const HomePageReport = props => {
     Profession: profession
   };
 
+  let containerResizer = useSpring({
+    minHeight: selectedReport ? "85%" : "0px",
+    opacity: selectedReport ? 1 : 0,
+    width: selectedReport ? `50%` : "0px"
+  });
+
   let topics = Object.keys(reportObject);
   return (
-    <div className="report-container">
+    <animated.div className={`report-container`} style={containerResizer}>
       <div className="report-container-bg" />
       {selectedReport
         ? topics.map(topic => {
@@ -49,7 +57,7 @@ const HomePageReport = props => {
             );
           })
         : null}
-    </div>
+    </animated.div>
   );
 };
 

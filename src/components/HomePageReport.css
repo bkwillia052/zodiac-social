@@ -1,13 +1,17 @@
 .report-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 50%;
   flex-direction: column;
   position: relative;
   color: white;
+  min-height: 85%;
+  padding: 25px 0;
 }
-
+.report-container.hidden {
+  display: none;
+}
 .report-topic-container {
   display: flex;
   flex-direction: column;
@@ -27,9 +31,10 @@
 
 .report-topic {
   padding: 3px;
-  margin: 8px 0;
+  margin-top: 8px;
   position: relative;
   width: 20%;
+  bottom: -1px;
 }
 
 .topic-corner {
@@ -73,7 +78,7 @@
 .content-corner {
   position: absolute;
   top: 0;
-  border: 1px solid;
+  border: 0.5px solid;
   left: 0;
   width: 50%;
 }
