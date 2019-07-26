@@ -26,15 +26,26 @@ const HomePageReport = props => {
   let topics = Object.keys(reportObject);
   return (
     <div className="report-container">
+      <div className="report-container-bg" />
       {selectedReport
         ? topics.map(topic => {
             let topicIndex =
               topic === "Personal Life" ? "personal_life" : topic.toLowerCase();
             console.log(topicIndex, reportObject[topicIndex]);
             return (
-              <div className="report-topic">{`${topic}: ${
-                reportObject[topic]
-              }`}</div>
+              <div className="report-topic-container">
+                <div className="report-topic">
+                  <div className="topic-corner top" />
+                  <div className="topic-corner left" />
+                  <div className="topic-corner bottom" />
+                  <div className="topic-corner right" />
+                  {topic}
+                </div>
+                <div className="report-content">
+                  <div className="content-corner" />
+                  {reportObject[topic]}
+                </div>
+              </div>
             );
           })
         : null}
