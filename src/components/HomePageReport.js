@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomePageReport.css";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 
 const HomePageReport = props => {
   const { selectedReport } = props;
@@ -26,10 +26,17 @@ const HomePageReport = props => {
   };
 
   let containerResizer = useSpring({
-    minHeight: selectedReport ? "85%" : "0px",
-    opacity: selectedReport ? 1 : 0,
-    width: selectedReport ? `50%` : "0px"
+    minHeight: selectedReport ? `85%` : `0%`,
+    opacity: selectedReport ? 1 : 0
   });
+
+  let borderResizer = useSpring({
+    config: config.molasses,
+    delay: 150,
+    width: selectedReport ? `50%` : `0%`
+  });
+
+  let topicBorderResizer = useSpring({ width: selectedReport ? `100%` : `0%`, config: config.molasses, delay: 190 })
 
   let topics = Object.keys(reportObject);
   return (
@@ -45,12 +52,15 @@ const HomePageReport = props => {
                 <div className="report-topic">
                   <div className="topic-corner top" />
                   <div className="topic-corner left" />
-                  <div className="topic-corner bottom" />
+                        <animated.div className="topic-corner bottom" style={topicBorderResizer} />
                   <div className="topic-corner right" />
                   {topic}
                 </div>
                 <div className="report-content">
-                  <div className="content-corner" />
+                  <animated.div
+                    className="content-corner"
+                    style={borderResizer}
+                  />
                   {reportObject[topic]}
                 </div>
               </div>

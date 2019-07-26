@@ -38,7 +38,7 @@
 }
 
 .topic-corner {
-  width: 20px;
+  
   border-top: 1px solid;
   position: absolute;
 }
@@ -46,6 +46,7 @@
 .topic-corner.top {
   top: 0;
   left: 0;
+  width: 20px;
 }
 
 .topic-corner.left {
@@ -58,7 +59,7 @@
 .bottom {
   right: 0;
   bottom: 0;
-  width: 100%;
+  
 }
 
 .right {
@@ -80,5 +81,4 @@
   top: 0;
   border: 0.5px solid;
   left: 0;
-  width: 50%;
 }
