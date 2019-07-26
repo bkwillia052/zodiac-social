@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import SignImage from "./components/SignImage";
+import HomePageReport from "./components/HomePageReport";
 
 let sdkClient = require("./sdk/sdk");
 
@@ -37,10 +38,10 @@ let signs = [
   "pisces"
 ];
 
-
 class App extends Component {
   state = {
-    reports: []
+    reports: [],
+    selected: ""
   };
 
   getSignReports = result => {
@@ -50,8 +51,19 @@ class App extends Component {
     });
   };
 
+  selectSign = sign => {
+    if (this.state.selected === sign) {
+      this.setState({
+        selected: ""
+      });
+    } else {
+      this.setState({
+        selected: sign
+      });
+    }
+  };
+
   componentDidMount() {
-    console.log("d", process.env);
     let pArr = [];
     let context = this;
     signs.forEach(sign => {
@@ -77,25 +89,36 @@ class App extends Component {
     });
   }
   render() {
+    const { reports, selected } = this.state;
     return (
       <div className="App">
         <div className="main-page-top">
-        <nav>
-          <div>ZODIAC SOCIAL</div>
-          <ul>
-            <li>Sign Up</li>
-            <li>Sign</li>
-          </ul>
-        </nav>
+          <nav>
+            <div>ZODIAC SOCIAL</div>
+            <ul>
+              <li>Sign Up</li>
+              <li>Sign</li>
+            </ul>
+          </nav>
         </div>
         <div className="main-page-bottom">
           <div className="sign-icon-cont">
             {signs.map(sign => {
-              return <SignImage sign={sign} />;
+              return (
+                <SignImage
+                  selected={selected}
+                  sign={sign}
+                  selectSign={this.selectSign}
+                />
+              );
             })}
           </div>
+          <HomePageReport
+            selectedReport={
+              selected ? reports.filter(r => r.sun_sign === selected)[0] : ""
+            }
+          />
         </div>
-        
       </div>
     );
   }

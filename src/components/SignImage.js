@@ -1,5 +1,6 @@
 import React from "react";
 import "./SignImage.css";
+import { useSpring, animated } from "react-spring";
 
 function rowPercent(sign) {
   switch (sign) {
@@ -47,18 +48,28 @@ function columnPercent(sign) {
 }
 
 const SignImage = props => {
+  let resizer = useSpring({
+    width: props.sign === props.selected ? "440px" : "120px",
+    height: props.sign === props.selected ? "440px" : "120px",
+    left: props.sign === props.selected ? "25%" : columnPercent(props.sign),
+    top: props.sign === props.selected ? "0" : rowPercent(props.sign)
+  });
   return (
-    <div
-      className={`sign-icon ${props.sign} selected`}
-      style={{ left: props.sign === props.selected ? "50%" : columnPercent(props.sign), top: left: props.sign === props.selected ? "50%" :rowPercent(props.sign) }}
+    <animated.div
+      style={resizer}
+      onClick={() => props.selectSign(props.sign)}
+      className={`sign-icon ${props.sign} ${
+        props.selected !== "" && props.selected !== props.sign ? "hidden" : ""
+      }`}
     >
       <div className="sign-img-container">
-        <div className={`inner ${props.selected ? "square" : "circle"}`} />
-        <div className={`inner ${props.selected ? "circle" : "square"}`} />
+        <div className="sign-img-container-bg" />
+        <div className={`inner square `} />
+        <div className={`inner circle `} />
         <img src={require(`../assets/zodiac-signs/${props.sign}.png`)} alt="" />
       </div>
       <div className="sign-name">{props.sign.toUpperCase()}</div>
-    </div>
+    </animated.div>
   );
 };
 

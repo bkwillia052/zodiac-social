@@ -1,8 +1,8 @@
 .sign-img-container {
   display: flex;
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   justify-content: center;
   border: 2px solid;
@@ -10,27 +10,12 @@
   cursor: pointer;
 }
 
-.sign-img-container::before {
+.sign-img-container-bg {
   position: absolute;
-  content: "";
   top: 0;
   left: 0;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  justify-content: center;
-  background-color: white;
-  filter: blur(2.5px);
-  opacity: 0.7;
-}
-
-.sign-img-container::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   justify-content: center;
   background-color: white;
@@ -83,6 +68,10 @@
   border: 3px solid;
   border-radius: 50%;
   z-index: 1;
+}
+
+.hidden {
+  display: none;
 }
 
 .aries {
