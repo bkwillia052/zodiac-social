@@ -46,10 +46,11 @@ function columnPercent(sign) {
       return null;
   }
 }
-
+    /* width: 71%;
+    height: 92%; */
 const SignImage = props => {
   let resizer = useSpring({
-    width: props.sign === props.selected ? "440px" : "120px",
+    width: props.sign === props.selected ? `71%` : `19.54%`,
     height: props.sign === props.selected ? "440px" : "120px",
     left: props.sign === props.selected ? "25%" : columnPercent(props.sign),
     top: props.sign === props.selected ? "0" : rowPercent(props.sign)

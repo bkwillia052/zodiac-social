@@ -41,7 +41,7 @@ let signs = [
 class App extends Component {
   state = {
     reports: [],
-    selected: "libra"
+    selected: ""
   };
 
   getSignReports = result => {
