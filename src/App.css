@@ -122,11 +122,19 @@
   position: absolute;
   bottom: -25px;
   color: white;
+  cursor: pointer;
+}
+
+.blurred {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
 }
 
 .main-page-top {
   padding: 10px;
   height: 30%;
+  z-index: 1;
 }
 
 nav {

@@ -41,7 +41,8 @@ let signs = [
 class App extends Component {
   state = {
     reports: [],
-    selected: ""
+    selected: "",
+    tweetView: false
   };
 
   getSignReports = result => {
@@ -61,6 +62,12 @@ class App extends Component {
         selected: sign
       });
     }
+  };
+
+  toggleTweetView = () => {
+    this.setState({
+      tweetView: !this.state.tweetView
+    });
   };
 
   componentDidMount() {
@@ -89,13 +96,16 @@ class App extends Component {
     });
   }
   render() {
-    const { reports, selected } = this.state;
+    const { reports, selected, tweetView } = this.state;
     return (
       <div className="App">
         <div className="svg-bg" />
         <div className="black-bg" />
         <div className="white-bg" />
-        <div className="main-page-top">
+        <div
+          className="main-page-top"
+          onClick={tweetView ? ()=> this.toggleTweetView() : null}
+        >
           <nav>
             <div className="logo">
               ZODIAC SOCIAL
@@ -118,11 +128,11 @@ class App extends Component {
             </ul>
           </nav>
         </div>
-        <div className="main-page-bottom">
+        <div className={`main-page-bottom ${tweetView ? "blurred" : ""}`}>
           <header className="horoscope-header">
             <h1 className="horoscope-header-txt">Daily Horoscope</h1>
             {selected ? (
-              <div className="tweet-check-click">
+              <div className="tweet-check-click" onClick={this.toggleTweetView}>
                 {`Click Here To See What Other ${selected.toUpperCase()} Are
                 Thinking`}
               </div>
