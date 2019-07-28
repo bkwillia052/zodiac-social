@@ -1,13 +1,22 @@
 .report-container {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   width: 50%;
   flex-direction: column;
   position: relative;
   color: white;
-  min-height: 85%;
-  padding: 25px 0;
+  padding-bottom: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.report-container::-webkit-scrollbar {
+  width: 10px;
+
+  background-color: rgba(211, 211, 211, 0.438);
+}
+.report-container::-webkit-scrollbar-thumb {
+  background-color: black;
 }
 .report-container.hidden {
   display: none;

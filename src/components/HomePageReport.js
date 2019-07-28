@@ -28,7 +28,7 @@ const HomePageReport = props => {
   };
 
   let containerResizer = useSpring({
-    minHeight: selectedReport ? `85%` : `0%`,
+    height: selectedReport ? `70%` : `0%`,
     opacity: selectedReport ? 1 : 0
   });
   let borderResizer = useSpring({
