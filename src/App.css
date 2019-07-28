@@ -84,7 +84,7 @@
 .sign-icon-cont {
   display: flex;
   position: relative;
-  width: 640px;
+  width: 600px;
   flex-wrap: wrap;
 
   height: 475px;
@@ -92,9 +92,29 @@
 
 .main-page-bottom {
   height: 70%;
+  position: relative;
   display: flex;
   align-items: center;
   background: rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+}
+.main-content {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+.horoscope-header {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+.horoscope-header-txt {
+  font-size: 40px;
+  color: white;
+  margin: unset;
 }
 
 .main-page-top {

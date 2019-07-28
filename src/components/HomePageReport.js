@@ -28,8 +28,8 @@ const HomePageReport = props => {
   };
 
   let containerResizer = useSpring({
-    height: selectedReport ? `70%` : `0%`,
-    opacity: selectedReport ? 1 : 0
+    height: selectedReport ? `70%` : `10%`,
+    opacity: selectedReport ? 1 : 1
   });
   let borderResizer = useSpring({
     config: config.molasses,
@@ -46,36 +46,43 @@ const HomePageReport = props => {
   let topics = Object.keys(reportObject);
   return (
     <animated.div className={`report-container`} style={containerResizer}>
-      <div className="report-container-bg" />
-      {selectedReport
-        ? topics.map((topic, topicIdx) => {
-            let topicIndex =
-              topic === "Personal Life" ? "personal_life" : topic.toLowerCase();
+      <div
+        className="report-container-bg"
+        style={{ height: selectedReport ? `180%` : `100%` }}
+      />
+      {selectedReport ? (
+        topics.map((topic, topicIdx) => {
+          let topicIndex =
+            topic === "Personal Life" ? "personal_life" : topic.toLowerCase();
 
-            return (
-              <div className="report-topic-container">
-                <div className="report-topic">
-                  <div className="topic-corner top" />
-                  <div className="topic-corner left" />
-                  <animated.div
-                    className="topic-corner bottom"
-                    style={topicBorderResizer}
-                  />
-                  <div className="topic-corner right" />
-                  {topic}
-                </div>
-
-                <div className="report-content">
-                  <animated.div
-                    className="content-corner"
-                    style={borderResizer}
-                  />
-                  {reportObject[topic]}
-                </div>
+          return (
+            <div className="report-topic-container">
+              <div className="report-topic">
+                <div className="topic-corner top" />
+                <div className="topic-corner left" />
+                <animated.div
+                  className="topic-corner bottom"
+                  style={topicBorderResizer}
+                />
+                <div className="topic-corner right" />
+                {topic}
               </div>
-            );
-          })
-        : null}
+
+              <div className="report-content">
+                <animated.div
+                  className="content-corner"
+                  style={borderResizer}
+                />
+                {reportObject[topic]}
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <div className="select-txt">
+          Select Your Sign To View Your Daily Report
+        </div>
+      )}
     </animated.div>
   );
 };

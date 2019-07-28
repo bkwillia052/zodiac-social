@@ -1,18 +1,21 @@
 .report-container {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 48%;
+  margin: 0 5px;
   flex-direction: column;
   position: relative;
   color: white;
-  padding-bottom: 20px;
+  max-width: 600px;
   overflow: scroll;
   overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 15px;
+  border: 0.5px solid rgba(255, 255, 255, 0.432);
 }
 
 .report-container::-webkit-scrollbar {
   width: 10px;
-
   background-color: rgba(211, 211, 211, 0.438);
 }
 .report-container::-webkit-scrollbar-thumb {
@@ -27,6 +30,7 @@
   align-items: center;
   position: relative;
   width: 100%;
+  margin: 5px 0;
 }
 .report-container-bg {
   position: absolute;
@@ -36,6 +40,13 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.637);
   filter: blur(2.5px);
+}
+
+.select-txt {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .report-topic {

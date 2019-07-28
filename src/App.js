@@ -119,23 +119,27 @@ class App extends Component {
           </nav>
         </div>
         <div className="main-page-bottom">
-          
-          <div className="sign-icon-cont">
-            {signs.map(sign => {
-              return (
-                <SignImage
-                  selected={selected}
-                  sign={sign}
-                  selectSign={this.selectSign}
-                />
-              );
-            })}
-          </div>
-          <HomePageReport
-            selectedReport={
-              selected ? reports.filter(r => r.sun_sign === selected)[0] : ""
-            }
-          />
+          <header className="horoscope-header">
+            <h1 className="horoscope-header-txt">Daily Horoscope</h1>
+          </header>
+          <section className="main-content">
+            <div className="sign-icon-cont">
+              {signs.map(sign => {
+                return (
+                  <SignImage
+                    selected={selected}
+                    sign={sign}
+                    selectSign={this.selectSign}
+                  />
+                );
+              })}
+            </div>
+            <HomePageReport
+              selectedReport={
+                selected ? reports.filter(r => r.sun_sign === selected)[0] : ""
+              }
+            />
+          </section>
         </div>
       </div>
     );
