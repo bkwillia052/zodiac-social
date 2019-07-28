@@ -109,12 +109,19 @@
   display: flex;
   justify-content: center;
   height: 10%;
+  position: relative;
 }
 
 .horoscope-header-txt {
   font-size: 40px;
   color: white;
   margin: unset;
+}
+
+.tweet-check-click {
+  position: absolute;
+  bottom: -25px;
+  color: white;
 }
 
 .main-page-top {

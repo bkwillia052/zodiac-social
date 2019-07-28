@@ -121,6 +121,12 @@ class App extends Component {
         <div className="main-page-bottom">
           <header className="horoscope-header">
             <h1 className="horoscope-header-txt">Daily Horoscope</h1>
+            {selected ? (
+              <div className="tweet-check-click">
+                {`Click Here To See What Other ${selected.toUpperCase()} Are
+                Thinking`}
+              </div>
+            ) : null}
           </header>
           <section className="main-content">
             <div className="sign-icon-cont">

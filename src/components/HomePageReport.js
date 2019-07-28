@@ -43,6 +43,14 @@ const HomePageReport = props => {
     delay: 190
   });
 
+  let fontColorChange = useSpring({
+    color: !selectedReport
+      ? `rgba(255, 255, 255,1)`
+      : `rgba(158, 158, 158, 0.795)`,
+    delay: 600,
+    config: config.slow
+  });
+
   let topics = Object.keys(reportObject);
   return (
     <animated.div className={`report-container`} style={containerResizer}>
@@ -79,9 +87,9 @@ const HomePageReport = props => {
           );
         })
       ) : (
-        <div className="select-txt">
+        <animated.div className="select-txt" style={fontColorChange}>
           Select Your Sign To View Your Daily Report
-        </div>
+        </animated.div>
       )}
     </animated.div>
   );
