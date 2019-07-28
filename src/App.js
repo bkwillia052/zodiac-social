@@ -92,9 +92,12 @@ class App extends Component {
     const { reports, selected } = this.state;
     return (
       <div className="App">
+        <div className="svg-bg" />
+        <div className="black-bg" />
+        <div className="white-bg" />
         <div className="main-page-top">
           <nav>
-            <div>ZODIAC SOCIAL</div>
+            <div className="logo">ZODIAC SOCIAL</div>
             <ul>
               <li>Sign Up</li>
               <li>Sign</li>

@@ -10,7 +10,37 @@
   background-size: cover;
   overflow: scroll;
 }
+.svg-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0%, 50% 50%, 0% 60%);
+  opacity: 0.5;
 
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%239C92AC' fill-opacity='0.58' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+.black-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(100% 100%, 100% 0%, 50% 50%, 0% 60%);
+  opacity: 0.2;
+  background-color: black;
+}
+.white-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 100%, 0% 60%, 100% 100%);
+  opacity: 0.4;
+  background-color: white;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -20,6 +50,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.logo {
+  font-size: 50px;
+  color: white;
+  z-index: 1;
 }
 
 .App-link {
