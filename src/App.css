@@ -8,12 +8,7 @@
   width: 100%;
   background: url("./assets/art-ball-close-up-1935854.jpg");
   background-size: cover;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  overflow: scroll;
 }
 
 .App-header {
