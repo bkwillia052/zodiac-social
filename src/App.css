@@ -10,6 +10,7 @@
   background-size: cover;
   overflow: scroll;
 }
+
 .svg-bg {
   position: absolute;
   top: 0;
@@ -22,12 +23,33 @@
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%239C92AC' fill-opacity='0.58' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
+.sun-circle {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  right: -15px;
+  top: -14px;
+}
+
 .sun-svg {
   position: absolute;
   height: auto;
   width: 50px;
-  right: 0px;
-  top: 0;
+  right: -20px;
+  top: -20px;
+  animation: logo-spin infinite 20s linear;
+  z-index: 2;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .black-bg {
   position: absolute;
@@ -73,8 +95,18 @@
   height: 10px;
   width: 108%;
   border-radius: 50px;
-
+  z-index: 1;
   background-color: white;
+}
+
+.nav-border {
+  position: absolute;
+  bottom: -10px;
+  height: 10px;
+  width: 100vw;
+  border-radius: 50px;
+
+  background-color: rgba(0, 0, 0, 0.534);
 }
 
 .App-link {
@@ -135,6 +167,7 @@
   padding: 10px;
   height: 30%;
   z-index: 1;
+  position: relative;
 }
 
 nav {
