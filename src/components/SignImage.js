@@ -46,7 +46,7 @@ function columnPercent(sign) {
       return null;
   }
 }
-    
+
 const SignImage = props => {
   let resizer = useSpring({
     width: props.sign === props.selected ? `71%` : `19.54%`,
@@ -63,7 +63,10 @@ const SignImage = props => {
       }`}
     >
       <div className="sign-img-container">
-        <div className="sign-img-container-bg" />
+        <div
+          className="sign-img-container-bg"
+          style={{ position: "absolute" }}
+        />
         <div className={`inner square `} />
         <div className={`inner circle `} />
         <img src={require(`../assets/zodiac-signs/${props.sign}.png`)} alt="" />
